@@ -185,7 +185,7 @@
         </div>
     </section>
     <!-- <ProductsHydroponics /> -->
-    <section class="women-banner spad" ref="targetRef3">
+    <section id="products" class="women-banner spad" ref="targetRef3">
     
     <div class="container-fluid">
       <!-- <div class="row">

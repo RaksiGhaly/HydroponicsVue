@@ -13,6 +13,7 @@
     "http-server": "^14.1.1",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
+    "vue-scrollto": "^2.20.0",
     "vue3-carousel": "^0.3.1"
   },
   "devDependencies": {
