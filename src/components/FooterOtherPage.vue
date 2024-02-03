@@ -29,14 +29,31 @@
             <h5>Information</h5>
             <ul>
               <li>
-                <a @click="scrollToElement1">About Us</a>
+                <router-link :to="{ name: 'home', hash: '#about' }">
+                  About Us</router-link
+                >
               </li>
-              <li><a @click="scrollToElement2">Feature</a></li>
+              <li>
+                <router-link :to="{ name: 'home', hash: '#feature' }">
+                  Feature</router-link
+                >
+              </li>
+              <li>
+                <router-link :to="{ name: 'home', hash: '#products' }">
+                  <a>Product</a></router-link
+                >
+              </li>
+              <li>
+                <router-link :to="{ name: 'home', hash: '#team' }">
+                  <a>Team</a></router-link
+                >
+              </li>
+              <li><a @click="scrollToElement5">Contact</a></li>
+
+              <!-- <li><a @click="scrollToElement2">Feature</a></li>
               <li><a @click="scrollToElement3">Product</a></li>
               <li><a @click="scrollToElement4">Team</a></li>
-              <li><a @click="scrollToElement5">contact</a></li>
-
-              
+              <li><a @click="scrollToElement5">contact</a></li> -->
 
               <!-- <router-link :to="{ name: 'home', hash: '#about' }">About Us</router-link> -->
             </ul>
@@ -63,11 +80,12 @@
 <script>
 // import 'vue3-carousel/dist/carousel.css';
 // import { Carousel, Pagination, Slide, Navigation} from 'vue3-carousel'
-import { defineComponent } from "vue";
+// import { defineComponent } from "vue";
 import "vue3-carousel/dist/carousel.css";
 // import { scrollto } from "svelte-scrollto";
 // import * as animateScroll from "svelte-scrollto";
 // import { Carousel, Pagination, Slide, Navigation } from "vue3-carousel";
+// import {Router} from 'vue-router'
 
 // var Vue = require('vue');
 var VueScrollTo = require("vue-scrollto");
@@ -88,8 +106,8 @@ var VueScrollTo = require("vue-scrollto");
 
 // Vue.use(VueScrollTo)
 
-export default defineComponent({
-  name: "FooterHydroponics",
+export default {
+  name: "FooterOtherPage",
   components: {
     // Carousel,
     // Slide,
@@ -99,91 +117,22 @@ export default defineComponent({
   },
 
   methods: {
-    scrollToElement1() {
-      VueScrollTo.scrollTo("#about", 500, {
-        easing: "ease-in-out",
-        offset: 100,
-        force: false,
-        cancelable: true,
-        onStart: function () {
-          console.log("scroll started");
-        },
-
-        onDone: function () {
-          console.log("scroll finished");
-        },
-        onCancel: function () {
-          console.log("scroll canceled");
-        },
-        x: false,
-        y: true,
-      });
+    handleClick1() {
+      this.$refs.targetRef1.scrollIntoView({ behavior: "smooth" });
     },
 
-    scrollToElement2() {
-      VueScrollTo.scrollTo("#feature", 500, {
-        easing: "ease-in-out",
-        offset: -50,
-        force: false,
-        cancelable: true,
-        onStart: function () {
-          console.log("scroll started");
-        },
-
-        onDone: function () {
-          console.log("scroll finished");
-        },
-        onCancel: function () {
-          console.log("scroll canceled");
-        },
-        x: false,
-        y: true,
-      });
+    handleClick2() {
+      this.$refs.targetRef2.scrollIntoView({ behavior: "smooth" });
+    },
+    handleClick3() {
+      this.$refs.targetRef3.scrollIntoView({ behavior: "smooth" });
     },
 
-    scrollToElement3() {
-      VueScrollTo.scrollTo("#products", 500, {
-        easing: "ease-in-out",
-        offset: 20,
-        force: false,
-        cancelable: true,
-        onStart: function () {
-          console.log("scroll started");
-        },
+    handleClick4() {
+      this.$refs.targetRef4.scrollIntoView({ behavior: "smooth" });
+      },
 
-        onDone: function () {
-          console.log("scroll finished");
-        },
-        onCancel: function () {
-          console.log("scroll canceled");
-        },
-        x: false,
-        y: true,
-      });
-    },
-
-    scrollToElement4() {
-      VueScrollTo.scrollTo("#team", 500, {
-        easing: "ease-in-out",
-        offset: 50,
-        force: false,
-        cancelable: true,
-        onStart: function () {
-          console.log("scroll started");
-        },
-
-        onDone: function () {
-          console.log("scroll finished");
-        },
-        onCancel: function () {
-          console.log("scroll canceled");
-        },
-        x: false,
-        y: true,
-      });
-    },
-
-    scrollToElement5() {
+       scrollToElement5() {
       VueScrollTo.scrollTo("#footer", 500, {
         easing: "ease-in-out",
         // offset: -100,
@@ -203,23 +152,8 @@ export default defineComponent({
         y: true,
       });
     },
-
-    handleClick1() {
-      this.$refs.targetRef1.scrollIntoView({ behavior: "smooth" });
-    },
-
-    handleClick2() {
-      this.$refs.targetRef2.scrollIntoView({ behavior: "smooth" });
-    },
-    handleClick3() {
-      this.$refs.targetRef3.scrollIntoView({ behavior: "smooth" });
-    },
-
-    handleClick4() {
-      this.$refs.targetRef4.scrollIntoView({ behavior: "smooth" });
-    },
   },
-});
+};
 </script>
 
 <!-- <style>

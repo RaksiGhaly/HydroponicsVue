@@ -349,6 +349,7 @@ export default defineComponent({
     Pagination,
     
   },
+
   
 
   data() {
@@ -394,6 +395,20 @@ export default defineComponent({
       .then((res) => (this.products = res.data.data.data))
       // eslint-disable-next-line no-console
       .catch((err) => console.log(err));
+    
+    if (this.$route.hash === "#about") {
+      this.handleClick1();
+    }
+    if (this.$route.hash === "#feature") {
+      this.handleClick2();
+    }
+    if (this.$route.hash === "#products") {
+      this.handleClick3();
+    }
+    if (this.$route.hash === "#team") {
+      this.handleClick4();
+    }
+      
   },
 });
 

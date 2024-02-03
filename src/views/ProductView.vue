@@ -134,27 +134,29 @@
     </section>
     <!-- Product Shop Section End -->
 
-    <FooterHydroponics />
+    <FooterOtherPage />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HeaderHydroponics from "@/components/HeaderHydroponics.vue";
-import FooterHydroponics from "@/components/FooterHydroponics.vue";
+// import FooterHydroponics from "@/components/FooterHydroponics.vue";
 import { defineComponent } from "vue";
 import { Carousel, Slide, Navigation } from "vue3-carousel";
 import axios from "axios";
+import FooterOtherPage from "@/components/FooterOtherPage.vue";
 
 export default defineComponent({
   name: "ProductView",
   components: {
     HeaderHydroponics,
-    FooterHydroponics,
+    // FooterHydroponics,
     Carousel,
     Slide,
     Navigation,
-  },
+    FooterOtherPage
+},
   data() {
     return {
       gambar_default: "",
